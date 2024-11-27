@@ -5,6 +5,7 @@
   how SCALUS is built.
   -->
   <PropertyGroup>
+    <NativeWindowing>false</NativeWindowing>
     <Edition>community</Edition>
   </PropertyGroup>
   
@@ -24,6 +25,22 @@
     <Authors>One Identity</Authors>
     <PackageProjectUrl>https://github.com/OneIdentity/SCALUS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/OneIdentity/SCALUS</RepositoryUrl>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(NativeWindowing)'=='true'">
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>signer.pfx</AssemblyOriginatorKeyFile>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <UserSecretsId>dc8f57ba-8a9d-40c4-bf34-a2ffba1ff687</UserSecretsId>
+    <Company>One Identity LLC</Company>
+    <Copyright>Copyright 2021 One Identity LLC</Copyright>
+    <RepositoryUrl>https://github.com/OneIdentity/SCALUS</RepositoryUrl>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>scalus.ico</ApplicationIcon>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
